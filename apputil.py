@@ -20,7 +20,7 @@ ways(12)
 
 def lowest_score(names, scores):
     # Find the index of the lowest score
-    idx = np.argmin(scores)
+    idx = int(np.argmin(scores))  # Ensure idx is a Python int
     return names[idx]
 
 def sort_names(names, scores):

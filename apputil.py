@@ -26,8 +26,10 @@ def lowest_score(names, scores):
 def sort_names(names, scores):
     # Get indices that would sort scores in descending order
     sorted_indices = np.argsort(scores)[::-1]
-    # Return names and scores sorted by descending score
-    return list(zip(names[sorted_indices], scores[sorted_indices]))
+    # Convert sorted arrays to lists before zipping
+    sorted_names = names[sorted_indices].tolist()
+    sorted_scores = scores[sorted_indices].tolist()
+    return list(zip(sorted_names, sorted_scores))
 
 # Example usage:
 names = np.array(['Hannah', 'Astrid', 'Abdul', 'Mauve', 'Jung'])
